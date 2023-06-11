@@ -33,12 +33,12 @@ func update(w http.ResponseWriter, r *http.Request) {
 
 	// if private or group
 	if message.Message.Chat.ID != 0 {
-		fmt.Println(message.Message.Chat.ID, message.Message.Text)
+		log.Println(message.Message.Chat.ID, message.Message.Text)
 		chatID = message.Message.Chat.ID
 		msgText = message.Message.Text
 	} else {
 		// if channel
-		fmt.Println(message.ChannelPost.Chat.ID, message.ChannelPost.Text)
+		log.Println(message.ChannelPost.Chat.ID, message.ChannelPost.Text)
 		chatID = message.ChannelPost.Chat.ID
 		msgText = message.ChannelPost.Text
 	}
